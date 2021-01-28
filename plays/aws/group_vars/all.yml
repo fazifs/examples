@@ -1,0 +1,8 @@
+---
+ec2_instance_type: t2.tiny 
+ec2_region: eu-west-1
+ec2_security_group: default
+ec2_instance_count: 2
+vpc_subnet_id: eu-west-1c
+
+tower_user_name: admin

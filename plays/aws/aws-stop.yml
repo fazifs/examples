@@ -1,0 +1,11 @@
+- name: ec2 provisioning 
+  hosts: localhost
+  connection: local
+  become: False
+  
+  tasks:
+  - name: launch ec2
+    ec2:
+     region: "{{ ec2_region }}"
+     group: "{{ ec2_security_group }}"
+     state: stopped
