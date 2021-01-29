@@ -6,7 +6,7 @@
   - name: launch ec2
     ec2:
      instance_type: "{{ ec2_instance_type }}"
-     key_name: id_rsa.pub
+     key_name: aws-tower.pub
      image: ami-7c491f05
      region: "{{ ec2_region }}"
      group: "{{ ec2_security_group }}"
