@@ -13,6 +13,6 @@
      count: "{{ ec2_instance_count }}"
      count_tag: 
            Name: fazi_ops
-#     vpc_subnet_id: "{{ vpc_subnet_id }}" 
+     vpc_subnet_id: "{{ vpc_subnet_id }}" 
      wait: yes
      assign_public_ip: yes 

@@ -3,6 +3,6 @@ ec2_instance_type: t2.tiny
 ec2_region: eu-west-1
 ec2_security_group: default
 ec2_instance_count: 2
-vpc_subnet_id: vpc-5e91f038
+vpc_subnet_id: subnet-ef44a8b5
 
 tower_user_name: admin
