@@ -10,9 +10,9 @@
      image: ami-7c491f05
      region: "{{ ec2_region }}"
      group: "{{ ec2_security_group }}"
-     count: 1
+     count: "{{ ec2_instance_count }}"
      count_tag: 
-           Name: demo_fazi_ops
+           Name: fazi_ops
      vpc_subnet_id: "{{ vpc_subnet_id }}" 
      wait: yes
      assign_public_ip: yes 
