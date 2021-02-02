@@ -47,7 +47,6 @@
             cidr_ip: 0.0.0.0/0
       with_items: ec2.instances
 
-    - name: Instance info
-     # debug: msg="{{ item.id }} {{ item.public_ip }}" 
-      debug: msg= "{{ item.id }} " 
-      with_items: ec2.instances
+   # - name: Instance info
+   #   debug: msg="{{ item.id }} {{ item.public_ip }}" 
+   #   with_items: ec2.instances
