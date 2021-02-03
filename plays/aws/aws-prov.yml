@@ -35,13 +35,14 @@
      vpc_subnet_id: "{{ vpc_subnet_id }}" 
      wait: yes
      assign_public_ip: yes 
+     register: ec2
      #instance_tags: " {{ tags }}"
   
   - name: add to host group
     add_host:
       name:  "{{ item.public_ip }}"
       groupname: web
-    loop: "{{ amazon.aws.ec2.instances }}"
+    loop: "{{ ec2.instances }}"
     
    
        
