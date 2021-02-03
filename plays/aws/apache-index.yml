@@ -1,6 +1,6 @@
 ---
 - name: create index.html
-  hosts: tag_Name_Web
+  hosts: tag_Type_apache
   tasks:   
      - name: Create index.html using Jinja2
        template:
