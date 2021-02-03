@@ -34,8 +34,8 @@
      vpc_subnet_id: "{{ vpc_subnet_id }}" 
      wait: yes
      assign_public_ip: yes 
-     instance_tags:
-       web : apache
+     instance_tags: " {{ tags }}"
+       
    
        
 

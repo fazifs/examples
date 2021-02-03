@@ -6,5 +6,7 @@ ec2_instance_count: 2
 vpc_subnet_id: subnet-ef44a8b5
 vpc_id: vpc-5e91f038
 name: default
+tags: 
+    type: "{{ tags_type | default('web') }}"
 
 tower_user_name: admin
