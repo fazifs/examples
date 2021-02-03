@@ -1,6 +1,6 @@
 ---
 - name: intall and configure apache
   become: true
-  hosts: web 
+  hosts: all
   roles: 
    - { role: geerlingguy.apache}
