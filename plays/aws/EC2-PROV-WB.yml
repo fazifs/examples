@@ -59,3 +59,9 @@
     - ../web/group_vars/all.yml
   roles: 
      - role: ansible-role-apache
+  
+  tasks:   
+     - name: Create index.html using Jinja2
+       template:
+        src: index.j2
+        dest: /var/www/html/index.html

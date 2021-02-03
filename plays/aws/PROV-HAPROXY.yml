@@ -53,10 +53,23 @@
         delay: 10
       loop: "{{ ec2.instances }}"  
 
-- name: apache install 
+- name: haproxy install 
   hosts: lb
   become: true
-  vars_files:
-    - group_vars/lb.yml
-  roles: 
-     - role: zerodowntime.haproxy
+  tasks:
+    - name: install haproxy
+      yum:
+        name: haproxy
+        state: latest
+
+    - name: start haproxy service
+      service: 
+        name:  haproxy
+        state: started 
+
+
+    - name: configure harproxy.cfg  
+      template: 
+        src: haproxy.cfg.j2
+        dest: /etc/haproxy//haproxy.cfg
+
