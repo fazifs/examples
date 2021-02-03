@@ -8,8 +8,6 @@ vpc_id: vpc-5e91f038
 name: default
 tags: 
     type: web
-instance_tag:
-  count_tag_name: web
-  count_tag_type: apache
-
+count_tag_name: web
+count_tag_type: apache
 tower_user_name: admin
