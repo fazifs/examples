@@ -1,26 +1,19 @@
 ---
-- hosts: all:!tag_type_tower:!tag_type_jenkins
+- name: Terminate instances
+  hosts: all
   vars:
     region: eu-west-1
-
   tasks:
-    - name: DANGER WILL ROBINSON! DANGER!
-      debug: var=ec2_id
-
-    - name: Kill it
-      local_action:
-        module: ec2
+    - name: Terminate instances that were previously launched
+      amazon.aws.ec2:
+        state: 'absent'
+        instance_ids: '{{ ec2.instance_ids }}'
         region: "{{ region }}"
-        instance_ids: "{{ ec2_id }}"
-        state: absent
 
-    - name: Success
-      debug: msg="Terminated instance ID {{ ec2_id }}"
 
-    - name: Kill ELB
-      local_action:
-        module: ec2_elb_lb
-        region: "{{ region }}"
-        name: "{{ lbname | default('VPClb') }}"
-        state: absent
-      when: kill_elb is defined
+
+
+
+
+
+ 
