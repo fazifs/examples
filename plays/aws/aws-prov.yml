@@ -29,12 +29,13 @@
      region: "{{ ec2_region }}"
      group: "{{ ec2_security_group }}"
      count: "{{ ec2_instance_count }}"
-     count_tag: 
-           Name: fazi_ops
+     instance_tag: 
+           Name: "{{ count_tag_name }} "
+           Type: "{{ count_tag_type }}"
      vpc_subnet_id: "{{ vpc_subnet_id }}" 
      wait: yes
      assign_public_ip: yes 
-     instance_tags: " {{ tags }}"
+     #instance_tags: " {{ tags }}"
        
    
        
