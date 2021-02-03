@@ -1,5 +1,5 @@
 ---
 - name: intall and configure apache
-  hosts: all
+  hosts: web
   roles: 
    - role: ansible-role-apache
