@@ -36,6 +36,10 @@
      wait: yes
      assign_public_ip: yes 
      #instance_tags: " {{ tags }}"
+  
+  - name: add to host group
+    add_host:
+      groups: " {{ host_group }}"
        
    
        

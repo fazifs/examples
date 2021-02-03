@@ -11,3 +11,4 @@ tags:
 instance_tag_name: web
 instance_tag_type: apache
 tower_user_name: admin
+host_group: web
