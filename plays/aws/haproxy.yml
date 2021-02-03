@@ -1,8 +1,6 @@
 ---
 - name: haproxy install 
-  hosts: localhost
-  connection: local
-  become: true
+  hosts: all
   tasks:
     - name: install haproxy
       yum:
