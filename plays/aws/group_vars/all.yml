@@ -1,7 +1,7 @@
 ---
 ec2_instance_type: t2.micro
 ec2_region: eu-west-1
-ec2_security_group: default
+ec2_security_group: demo-group
 ec2_instance_count: 2
 vpc_subnet_id: subnet-ef44a8b5
 vpc_id: vpc-5e91f038
