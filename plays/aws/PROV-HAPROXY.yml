@@ -32,10 +32,14 @@
         instance_tags: 
               Name: "{{ instance_tag_name }} "
               Type: "{{ instance_tag_type }}"
+        exact_count: 1    
+        count_tag:  
+              Name: "{{ instance_tag_name }} "
+              Type: "{{ instance_tag_type }}" 
         vpc_subnet_id: "{{ vpc_subnet_id }}" 
         wait: yes
         assign_public_ip: yes 
-        #instance_tags: " {{ tags }}"
+        
       register: ec2
       
     
@@ -70,6 +74,6 @@
 
     - name: configure harproxy.cfg  
       template: 
-        src: haproxy.cfg.j2
+        src: ../templates/haproxy.cfg.j2
         dest: /etc/haproxy//haproxy.cfg
 
