@@ -28,7 +28,7 @@
         image: "{{ ami }}"
         region: "{{ ec2_region }}"
         group: "{{ ec2_security_group }}"
-        count: "{{ ec2_instance_count }}"
+        #count: "{{ ec2_instance_count }}"
         instance_tags: 
               Name: "{{ instance_tag_name }} "
               Type: "{{ instance_tag_type }}"
