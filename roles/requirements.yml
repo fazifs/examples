@@ -1,1 +1,2 @@
 - src: https://github.com/geerlingguy/ansible-role-apache
+- name: zerodowntime.haproxy
