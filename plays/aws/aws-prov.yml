@@ -41,7 +41,7 @@
   - name: add to host group
     add_host:
       name:  "{{ item.public_ip }}"
-      groupname: web
+      groups: web
     loop: "{{ ec2.instances }}"
     
    
