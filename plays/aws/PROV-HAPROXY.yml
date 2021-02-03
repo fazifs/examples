@@ -74,6 +74,6 @@
 
     - name: configure harproxy.cfg  
       template: 
-        src: ../templates/haproxy.cfg.j2
+        src: ../../templates/haproxy.cfg.j2
         dest: /etc/haproxy//haproxy.cfg
 
