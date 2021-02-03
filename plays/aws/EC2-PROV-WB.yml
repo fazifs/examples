@@ -8,7 +8,6 @@
         name: "{{ name }}"
         description: sg with rule descriptions
         vpc_id: "{{ vpc_id }}"
-        #profile: "{{ aws_profile }}"
         region: "{{ ec2_region }}"
         rules:
           - proto: tcp
@@ -16,7 +15,6 @@
             - 80
             - 443
             - 8080
-            
             cidr_ip: 0.0.0.0/0
             rule_desc: allow all on port 80, 443, 8080
     
@@ -67,5 +65,5 @@
   tasks:   
      - name: Create index.html using Jinja2
        template:
-        src: index.j2
+        src: ../../templates/index.j2
         dest: /var/www/html/index.html
