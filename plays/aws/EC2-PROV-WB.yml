@@ -49,6 +49,5 @@
   hosts: web
   vars_files:
     - ../web/group_vars/all.yml
-  tasks:
-    roles: 
+  roles: 
      - role: ansible-role-apache
