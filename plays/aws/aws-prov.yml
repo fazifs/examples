@@ -39,9 +39,9 @@
   
   - name: add to host group
     add_host:
-      name: "{{ item }} "
+      name:  "{{ item.public_ip }}"
       groups: " {{ host_group }}"
-    with_item: ec2_instances
+    with_item:  "{{ public.instances[1:] }}"
        
    
        
