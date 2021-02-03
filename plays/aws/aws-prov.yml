@@ -39,7 +39,9 @@
   
   - name: add to host group
     add_host:
+      name: "{{ item }} "
       groups: " {{ host_group }}"
+    with_item: ec2_instances
        
    
        
