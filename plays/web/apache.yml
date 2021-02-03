@@ -3,4 +3,4 @@
   become: true
   hosts: all
   roles: 
-   - { role: geerlingguy.apache}
+   - { role: geerlingguy.apache }
