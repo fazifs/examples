@@ -4,7 +4,7 @@
   become: False
   tasks:
   - name: launch ec2
-    ec2:
+    amazon.aws.ec2:
      instance_type: "{{ ec2_instance_type }}"
      key_name: aws-tower
      image: ami-7c491f05
@@ -16,3 +16,24 @@
      vpc_subnet_id: "{{ vpc_subnet_id }}" 
      wait: yes
      assign_public_ip: yes 
+     instance_tags:
+       web : apache
+
+  - name: security group rule descriptions
+    amazon.aws.ec2_group:
+      name: "{{ name }}"
+      description: sg with rule descriptions
+      vpc_id: "{{ vpc_id }}"
+      #profile: "{{ aws_profile }}"
+      region: "{{ ec2_region }}"
+      rules:
+        - proto: tcp
+          ports:
+          - 80
+          - 443
+          - 8080
+          cidr_ip: 0.0.0.0/0
+          rule_desc: allow all on port 80, 443, 8080
+      diff: True
+       
+
