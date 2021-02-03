@@ -2,4 +2,4 @@
 - name: intall and configure apache
   hosts: all
   roles: 
-   - role: geerlingguy.apache 
+   - role: ansible-role-apache
