@@ -36,11 +36,10 @@ frontend main
 backend app
 	balance	roundrobin
 
-	{% for ec2.instance in tags['web'] %}
+	{% for ec2.instance in {{ ec2_tags.tags.Name['web'] }} %}
 		server {{ public_dns_name }}	{{ public_dns_name }}:{{ apache_listen_port }}	check
 	{% endfor %}
 
 
 
-    #server web1 web1_ip:80 check cookie web1
-    #server web2 web2_ip:80 check cookie web2
+   
