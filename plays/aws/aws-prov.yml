@@ -41,7 +41,8 @@
     add_host:
       name:  "{{ item.public_ip }}"
       groups: " {{ host_group }}"
-    with_item:  "{{ public.instances[1:] }}"
+    
+   
        
    
        
