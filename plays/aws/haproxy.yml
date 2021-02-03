@@ -1,0 +1,21 @@
+---
+- name: haproxy install 
+  hosts: localhost
+  connection: local
+  become: true
+  tasks:
+    - name: install haproxy
+      yum:
+        name: haproxy
+        state: latest
+
+    - name: start haproxy service
+      service: 
+        name:  haproxy
+        state: started 
+
+
+    - name: configure harproxy.cfg  
+      template: 
+        src: ../../templates/haproxy.cfg.j2
+        dest: /etc/haproxy//haproxy.cfg
