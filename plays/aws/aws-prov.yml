@@ -30,8 +30,8 @@
      group: "{{ ec2_security_group }}"
      count: "{{ ec2_instance_count }}"
      instance_tags: 
-           Name: "{{ count_tag_name }} "
-           Type: "{{ count_tag_type }}"
+           Name: "{{ instance_tag_name }} "
+           Type: "{{ instance_tag_type }}"
      vpc_subnet_id: "{{ vpc_subnet_id }}" 
      wait: yes
      assign_public_ip: yes 
