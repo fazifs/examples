@@ -47,14 +47,11 @@
 
     - name: wait for port 22
       wait_for:
+        host: "{{ item.public_ip }}"
         port: 22
-        host: "{{ item.private_ip }}"
         search_regex: OpenSSH
         delay: 10
-  
-
-
-
+      loop: "{{ ec2.instances }}"  
 
 - name: apache install 
   hosts: web
