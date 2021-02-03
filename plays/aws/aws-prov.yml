@@ -39,7 +39,7 @@
   
   - name: add to host group
     add_host:
-      name:  "{{ item.public_ip }}"
+      name:  "{{ public_ip_address }}"
       groups: " {{ host_group }}"
     
    
