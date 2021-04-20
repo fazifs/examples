@@ -4,7 +4,7 @@
   tasks:
     - name: Install 7zip from a network share with specific credentials
       win_package:
-        path: "{{ path }}{{ exe }}"
+        path: "{{ path }}"
         product_id: "{{ product_id }}"
         arguments: "{{ arguments }}"
         state: "{{ state }}"
