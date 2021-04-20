@@ -1,0 +1,11 @@
+---
+- hosts: all
+  gather_facts: no
+  tasks:
+    - name: Install 7zip from a network share with specific credentials
+      win_package:
+        path: "{{ path }}{{ exe }}"
+        product_id: "{{ product_id }}"
+        arguments: "{{ arguments }}"
+        state: "{{ state }}"
+...

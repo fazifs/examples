@@ -1,0 +1,5 @@
+ {% set instances = [] %}
+          {% for item in ec2_facts.instances if item.tags == ec2_tags and item.state == 'running' -%}
+            {{ instances.append(item.id) }}
+          {%- endfor %}
+          {{ instances }}

@@ -1,0 +1,7 @@
+---
+- hosts: all
+  gather_facts: yes
+  tasks:
+    - name: Get Windows Facts
+      win_product_facts:
+...

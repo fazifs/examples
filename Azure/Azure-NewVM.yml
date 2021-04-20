@@ -1,0 +1,30 @@
+---
+- hosts: localhost
+  connection: local
+  tasks:
+    - name: Create a network interface
+      azure_rm_networkinterface:
+        name: "nic-{{ name }}{{ N }}"
+        resource_group: "{{ rg_name }}"
+        virtual_network: "vnet-{{ name }}"
+        subnet_name: "snet-{{ name }}"
+        security_group: "nsg-{{ name }}"
+        ip_configurations:
+          - name: default
+            public_ip_address_name: "pip-{{ name }}{{ N }}"
+            primary: True
+    - name: Create VM
+      azure_rm_virtualmachine:
+        resource_group: "{{ rg_name }}"
+        name: "vm-{{ name }}{{ N }}"
+        vm_size: Standard_DS1_v2
+        admin_username: "{{ admin_user }}"
+        admin_password: "{{ password }}"
+        network_interfaces: "nic-{{ name }}{{ N }}"
+        os_type: Windows
+        image:
+          offer: WindowsServer
+          publisher: MicrosoftWindowsServer
+          sku: 2019-Datacenter
+          version: latest
+...

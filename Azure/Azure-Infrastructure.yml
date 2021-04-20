@@ -1,0 +1,56 @@
+---
+- hosts: localhost
+  connection: local
+  tasks:
+    - name: Create resource group
+      azure_rm_resourcegroup:
+        name: "{{ rg_name }}"
+        location: "{{ rg_location }}"
+    - name: Create virtual network
+      azure_rm_virtualnetwork:
+        resource_group: "{{ rg_name }}"
+        name: "vnet-{{ name }}"
+        address_prefixes: "{{ vnet_addrprefixes }}"
+    - name: Add subnet
+      azure_rm_subnet:
+        resource_group: "{{ rg_name }}"
+        name: "snet-{{ name }}"
+        address_prefix: "{{ subet_addrprefixes }}"
+        virtual_network: "vnet-{{ name }}"
+    - name: Create public IP address
+      azure_rm_publicipaddress:
+        resource_group: "{{ rg_name }}"
+        allocation_method: Static
+        name: "pip-{{ name }}{{ N }}"
+      register: output_ip_address
+    - name: Output public IP
+      debug:
+        msg: "The public IP is {{ output_ip_address.state.ip_address }}"
+    - name: Create Network Security Group
+      azure_rm_securitygroup:
+        resource_group: "{{ rg_name }}"
+        name: "nsg-{{ name }}"
+        rules:
+          - name: 'allow_rdp'
+            protocol: Tcp
+            destination_port_range: 3389
+            access: Allow
+            priority: 1001
+            direction: Inbound
+          - name: 'allow_web_traffic'
+            protocol: Tcp
+            destination_port_range:
+              - 80
+              - 443
+            access: Allow
+            priority: 1002
+            direction: Inbound
+          - name: 'allow_powershell_remoting'
+            protocol: Tcp
+            destination_port_range:
+              - 5985
+              - 5986
+            access: Allow
+            priority: 1003
+            direction: Inbound
+...

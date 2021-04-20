@@ -1,0 +1,15 @@
+---
+- hosts: all
+  gather_facts: no
+  tasks:
+    - name: Install 7zip from a network share
+      win_package:
+        path: "{{ path }}{{ exe }}"
+        product_id: "{{ product_id }}"
+        arguments: "{{ arguments }}"
+        state: "{{ state }}"
+    - name: Remove Directory
+      win_file:
+        path: "{{ path }}"
+        state: absent
+...

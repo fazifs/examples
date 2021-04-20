@@ -1,0 +1,12 @@
+---
+- hosts: all
+  gather_facts: no
+  tasks:
+    - name: Get Windows Domain
+      win_shell: '(Get-WmiObject -Class Win32_ComputerSystem).PartOfDomain'
+      register: domain
+      failed_when: "'False' in domain.stdout"
+    - name: MSG
+      debug:
+        msg: "{{ domain.stdout_lines }}"
+...
