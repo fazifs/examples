@@ -6,7 +6,7 @@ collections:
     - name: amazon.aws
     - name: google.cloud
    
-    - src: kkolk.mssql
+  
 
     
 
