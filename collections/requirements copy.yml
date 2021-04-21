@@ -1,0 +1,13 @@
+collections:
+
+    - name: ibm.cloudcollection
+    - name: azure.azcollection
+    - name: awx.awx
+    - name: amazon.aws
+    - name: google.cloud
+    - name: dsglaser.cis_security
+   
+  
+
+    
+
