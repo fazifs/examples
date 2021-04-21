@@ -3,4 +3,4 @@
   tasks:
     - name: Test Ping
       ping:
-      when: os_profile.system != "windows"
+        
