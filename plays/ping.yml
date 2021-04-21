@@ -1,0 +1,6 @@
+- hosts: all
+  gather_facts: yes
+  tasks:
+    - name: Test Ping
+      ping:
+      when: os_profile.system != "windows"
