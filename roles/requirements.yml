@@ -1,13 +1,13 @@
-- src: https://github.com/geerlingguy/ansible-role-apache
+- src: git@github.com:geerlingguy/ansible-role-apache
   type: git
   name: apache-role
 
 - name: zerodowntime.haproxy
 
-- src: https://github.com/ansible-lockdown/RHEL8-CIS
+- src: git@github.com:ansible-lockdown/RHEL8-CIS
   type: git
   name: RHEL8-CIS
 
-- src: https://github.com/ansible-lockdown/RHEL7-CIS
+- src: git@github.com:ansible-lockdown/RHEL7-CIS
   name: RHEL7-CIS
   type: git
