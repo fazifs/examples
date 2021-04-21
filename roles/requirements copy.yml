@@ -1,13 +1,10 @@
-collections:
+- src: https://github.com.geerlingguy/ansible-role-apache
 
-    - name: ibm.cloudcollection
-    - name: azure.azcollection
-    - name: awx.awx
-    - name: amazon.aws
-    - name: google.cloud
-    - name: dsglaser.cis_security
-   
+- name: zerodowntime.haproxy
+
+- src: https://github.com.ansible-lockdown/RHEL8-CIS
+ 
+
+- src: https://github.com.ansible-lockdown/RHEL7-CIS
+  name: RHEL7-CIS
   
-
-    
-

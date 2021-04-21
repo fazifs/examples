@@ -1,10 +1,10 @@
-- src: https://github.com.geerlingguy/ansible-role-apache
+- src: https://github.com/geerlingguy/ansible-role-apache
 
 - name: zerodowntime.haproxy
 
-- src: https://github.com.ansible-lockdown/RHEL8-CIS
+- src: https://github.com/ansible-lockdown/RHEL8-CIS
  
 
-- src: https://github.com.ansible-lockdown/RHEL7-CIS
+- src: https://github.com/ansible-lockdown/RHEL7-CIS
   name: RHEL7-CIS
   
